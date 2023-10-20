@@ -6,6 +6,8 @@ import { IndexComponent } from './components/home/index/index.component';
 import { RegisterCustomerComponent } from './components/customer/register-customer/register-customer.component';
 import { RegisterProductComponent } from './components/product/register-product/register-product.component';
 import { KartComponent } from './components/sale/kart/kart.component';
+import { ListComprasComponent } from './components/compras/list-compras/list-compras.component';
+import { RegisterComprasComponent } from './components/compras/register-compras/register-compras.component';
 
 const routes: Routes = [
   { path: '',
@@ -34,7 +36,20 @@ const routes: Routes = [
   {
     path: 'kart',
     component: KartComponent
-  }
+  },
+
+ { path: 'compras',
+  redirectTo: 'compras/list' },
+  { path: 'compras/list',
+    component: ListComprasComponent
+  },
+
+   { path: 'compras',
+  redirectTo: 'compras/register' },
+  { path: 'compras/register',
+  component: RegisterComprasComponent },
+
+
 ];
 
 @NgModule({

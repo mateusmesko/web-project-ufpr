@@ -1,0 +1,61 @@
+<div class="well" style="margin: 6px;">
+
+  <form #formCustomer="ngForm">
+
+
+    <div class="form-group">
+      <label for="idCompras">Identificador:</label>
+      <input type="text" class="form-control" id="idCompras" name="idCompras" [(ngModel)]="compras.idCompras"
+        #idCompras="ngModel" required>
+
+      <div *ngIf="idCompras.errors && (idCompras.dirty || idCompras.touched)" class="alert alert-danger">
+        Digite o identificador da ccompra.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cpf">CPF Do cliente:</label>
+
+      <input type="text" class="form-control" id="cpf" name="cpf" [(ngModel)]="compras.cpf"
+        #cpf="ngModel" minlength="2" required>
+
+      <div *ngIf="cpf.errors && (cpf.dirty || cpf.touched)" class="alert alert-danger">
+        <div [hidden]="!cpf.errors?.['required']">
+          Digite o CPF do cliente.
+        </div>
+
+        <div [hidden]="!cpf.errors?.['minlength']">
+          O cpf deve conter ... caracteres.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição do produto:</label>
+
+      <input type="text" class="form-control" id="description" name="description" [(ngModel)]="compras.description"
+        #description="ngModel" minlength="2" required>
+
+      <div *ngIf="description.errors && (description.dirty || description.touched)" class="alert alert-danger">
+        <div [hidden]="!description.errors?.['required']">
+          Digite a descrição do produto.
+        </div>
+
+        <div [hidden]="!description.errors?.['minlength']">
+          A descrição deve conter ao menos 2 caracteres.
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="form-group">
+      <button type="button" class="btn btn-primary" (click)="updateCompras()" [disabled]="!formCompras.form.valid"
+        style=" margin: 6px; background-color:#ff5a5e;">
+        <i class="fa fa-save" aria-hidden="true"></i> SALVAR
+      </button>
+
+      <a [routerLink]="['/customer']" class="btn btn-secondary" style=" margin: 6px; background-color: #ff5a5e;">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
+      </a>
+    </div>
+  </form>
+</div>
+

@@ -22,15 +22,18 @@
                     <i class="fa fa-eye" aria-hidden="true"></i>ver vendas
                 </button>
 
-                <a [routerLink]="['/customer/register', customer.id]" href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info" style="background-color: #ff5a5e; margin: 6px;">
+                <a [routerLink]="['/customer/register', customer.id]" href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info"
+                style="background-color: #ff5a5e; margin: 6px;">
                     <i class="fa fa-edit" aria-hidden="true"></i> Editar
                 </a>
                 <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-html="true"
-                data-bs-title="<em>Tooltip</em> <u>with</u> <b>HTML</b>" style="background-color: #ff5a5e; margin: 6px;">
+                data-bs-title="<em>Tooltip</em> <u>with</u> <b>HTML</b>"
+                style="background-color: #ff5a5e; margin: 6px;">
                     Tooltip with HTML
                   </button>
 
                 <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger"
+                style="background-color: #ff5a5e;"
                 (click)="remove($event, customer)">
                     <i class="fa fa-times" aria-hidden="true"></i> Remover
                 </a>
