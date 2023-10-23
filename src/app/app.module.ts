@@ -9,7 +9,7 @@ import { HomeModule } from './components/home/home.module';
 import { CustomerModule } from './components/customer/customer.module';
 import { ProductsModule } from './components/product/product.module';
 import { KartComponent } from './components/sale/kart/kart.component';
-
+import { ComprasModule } from './components/compras/compras.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { KartComponent } from './components/sale/kart/kart.component';
     HomeModule,
 
     CustomerModule,
-    ProductsModule
+    ProductsModule,
+    ComprasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
